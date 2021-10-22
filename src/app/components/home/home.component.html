@@ -1,0 +1,46 @@
+<section>
+  <article>
+    <header>
+      <h1>FIPE</h1>
+    </header>
+    <div>
+      <form action="">
+        <select placeholder="Select brand" name="brand" id="brand" [(ngModel)]="brandCode"
+          (ngModelChange)="getModels()">
+          <option value="undefined">Select</option>
+          <option *ngFor="let b of brands" [value]="b.codigo">
+            {{b.nome}}
+          </option>
+        </select>
+
+        <select placeholder="Select model" name="model" id="model" [(ngModel)]="modelCode" (ngModelChange)="getYears()">
+          <option value="undefined">Select</option>
+          <option *ngFor="let m of modelsVehicle" [value]="m.codigo">
+            {{m.nome}}
+          </option>
+        </select>
+
+        <select placeholder="Select brand" name="year" id="year" [(ngModel)]="yearCode" (ngModelChange)="getVehicle()">
+          <option value="undefined">Select</option>
+          <option *ngFor="let y of years" [value]="y.codigo">
+            {{y.nome}}
+          </option>
+        </select>
+
+        <br>
+
+        <div *ngIf="vehicle" class="container-vehicle">
+          <p>{{vehicle.AnoModelo}}</p>
+          <p>{{vehicle.CodigoFipe}}</p>
+          <p>{{vehicle.Combustivel}}</p>
+          <p>{{vehicle.Marca}}</p>
+          <p>{{vehicle.MesReferencia}}</p>
+          <p>{{vehicle.SiglaCombustivel}}</p>
+          <p>{{vehicle.SiglaCombustivel}}</p>
+          <p>{{vehicle.TipoVeiculo}}</p>
+          <p>{{vehicle.Valor}}</p>
+        </div>
+      </form>
+    </div>
+  </article>
+</section>
