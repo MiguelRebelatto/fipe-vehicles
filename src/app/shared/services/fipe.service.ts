@@ -20,7 +20,7 @@ export class FipeService extends AbstractService {
     super(httpClient)
   }
 
-  public getAll(type: string): Observable<Array<Brand>> {
+  public getBrands(type: string): Observable<Array<Brand>> {
     const subject = new Subject<Array<Brand>>();
 
     this.get(`${environment.url}/${type}/marcas`)

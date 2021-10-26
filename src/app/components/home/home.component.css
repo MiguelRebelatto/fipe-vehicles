@@ -1,4 +1,29 @@
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 2% 20%;
+}
+
+article {
+  flex: 1;
+}
+
+.progress {
+  margin-bottom: 15px;
+  background-color: #30424d;
+}
+
 form {
   display: flex;
   flex-direction: column;
+}
+
+select {
+  margin-bottom: 15px;
+}
+
+.optionType {
+  text-transform: capitalize;
 }
