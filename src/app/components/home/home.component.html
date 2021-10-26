@@ -46,7 +46,8 @@
         <br>
 
         <div *ngIf="vehicle" class="container-vehicle">
-          <h4>Result  </h4>
+          <h4>Result </h4>
+          <img class="imageCar" [src]="getImage">
           <p>{{vehicle.AnoModelo}}</p>
           <p>{{vehicle.CodigoFipe}}</p>
           <p>{{vehicle.Combustivel}}</p>

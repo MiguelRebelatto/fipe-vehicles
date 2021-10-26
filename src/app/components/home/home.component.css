@@ -27,3 +27,7 @@ select {
 .optionType {
   text-transform: capitalize;
 }
+
+.imageCar {
+  height: 30px;
+}

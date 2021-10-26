@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { types } from 'src/app/shared/constants/global-type';
+import { popularBrands } from 'src/app/shared/constants/popular-brands';
 import { Brand } from 'src/app/shared/models/brand';
 import { ModelVehicle, YearVehicle } from 'src/app/shared/models/model-vehicle';
 import { Vehicle } from 'src/app/shared/models/vehicle';
 import { Year } from 'src/app/shared/models/year';
 import { FipeService } from 'src/app/shared/services/fipe.service';
 
+const defaultCarImagePath: string = "assets/car.png"
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -47,6 +49,16 @@ export class HomeComponent implements OnInit {
       value = 0
 
     return `${value}%`
+  }
+
+  get getImage() {
+    if (!this.brandCode)
+      return defaultCarImagePath;
+    let brand = this.brands.find(i => i.codigo == this.brandCode)
+    let item = popularBrands.find(i => i.brand == brand?.nome)
+    if (!item)
+      return defaultCarImagePath;
+    return item.image ? item.image : defaultCarImagePath;
   }
 
   ngOnInit(): void {
