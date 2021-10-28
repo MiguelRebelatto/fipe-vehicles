@@ -1,5 +1,5 @@
 main {
   min-height: 100vh;
-  background: rgb(22, 44, 58);
-  color: #e5ddff;
+  background: linear-gradient(45deg, rgb(40 148 217), rgb(22 44 58 / 91%));
+  color: #323232;
 }

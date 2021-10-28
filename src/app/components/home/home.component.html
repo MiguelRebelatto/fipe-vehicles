@@ -13,7 +13,7 @@
       <form action="">
         <select class="optionType form-control" placeholder="Select type" name="type" id="type" [(ngModel)]="type"
           (ngModelChange)="getBrands()">
-          <option value="undefined">Select type</option>
+          <option value="">Select type</option>
           <option class="optionType" *ngFor="let t of types" [value]="t">
             {{t}}
           </option>
@@ -21,7 +21,7 @@
 
         <select class="form-control" placeholder="Select brand" name="brand" id="brand" [(ngModel)]="brandCode"
           (ngModelChange)="getModels()">
-          <option value="undefined">Select brand</option>
+          <option value="">Select brand</option>
           <option *ngFor="let b of brands" [value]="b.codigo">
             {{b.nome}}
           </option>
@@ -29,7 +29,7 @@
 
         <select class="form-control" placeholder="Select model" name="model" id="model" [(ngModel)]="modelCode"
           (ngModelChange)="getYears()">
-          <option value="undefined">Select model</option>
+          <option value="">Select model</option>
           <option *ngFor="let m of modelsVehicle" [value]="m.codigo">
             {{m.nome}}
           </option>
@@ -37,26 +37,20 @@
 
         <select class="form-control" placeholder="Select brand" name="year" id="year" [(ngModel)]="yearCode"
           (ngModelChange)="getVehicle()">
-          <option value="undefined">Select year</option>
+          <option value="">Select year</option>
           <option *ngFor="let y of years" [value]="y.codigo">
             {{y.nome}}
           </option>
         </select>
 
-        <br>
+        <h4 *ngIf="vehicle">Result </h4>
 
         <div *ngIf="vehicle" class="container-vehicle">
-          <h4>Result </h4>
           <img class="imageCar" [src]="getImage">
-          <p>{{vehicle.AnoModelo}}</p>
-          <p>{{vehicle.CodigoFipe}}</p>
-          <p>{{vehicle.Combustivel}}</p>
-          <p>{{vehicle.Marca}}</p>
-          <p>{{vehicle.MesReferencia}}</p>
-          <p>{{vehicle.SiglaCombustivel}}</p>
-          <p>{{vehicle.SiglaCombustivel}}</p>
-          <p>{{vehicle.TipoVeiculo}}</p>
-          <p>{{vehicle.Valor}}</p>
+          <p>Model: {{vehicle.AnoModelo}}</p>
+          <p>Fuel: {{vehicle.Combustivel}}</p>
+          <p>Brand: {{vehicle.Marca}}</p>
+          <p>Price: {{vehicle.Valor}}</p>
         </div>
       </form>
     </div>

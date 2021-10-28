@@ -3,11 +3,14 @@ section {
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 2% 20%;
 }
 
 article {
   flex: 1;
+  background: rgba(255, 255, 255, 0.4);
+  margin: 2% 10%;
+  padding: 2% 10%;
+  border-radius: 5px;
 }
 
 .progress {
@@ -29,5 +32,12 @@ select {
 }
 
 .imageCar {
-  height: 30px;
+  height: 40px;
+  float: right;
+}
+
+.container-vehicle {
+  background: white;
+  border-radius: 5px;
+  padding: 20px;
 }

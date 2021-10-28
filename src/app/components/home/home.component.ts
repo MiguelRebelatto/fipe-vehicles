@@ -23,9 +23,9 @@ export class HomeComponent implements OnInit {
   years: Array<Year> = [];
 
   type: string = types[0];
-  brandCode: string;
-  modelCode: string;
-  yearCode: string;
+  brandCode: string = "";
+  modelCode: string = "";
+  yearCode: string = "";
 
   vehicle: Vehicle;
 
